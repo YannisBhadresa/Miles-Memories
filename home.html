@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A personal travel journal where you can share your travel stories with others.">
+    <meta name="author" content="Travel Enthusiast">
+    <title>Travel Journal - Share Your Adventures</title>
+    <style>
+        /* Reset some basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f7f7f7;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            background:blue   
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        nav {
+            background: #333;
+            overflow: hidden;
+        }
+
+        nav a {
+            color: white;
+            padding: 16px 20px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        .container {
+            width: 80%;
+            margin: 40px auto;
+            max-width: 1200px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container input,
+        .form-container textarea,
+        .form-container select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-container button {
+            background: #3498db;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background: #2980b9;
+        }
+
+        .journal-entry {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .journal-entry img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .journal-entry h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .journal-entry p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .journal-entry .date {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header style="background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fpicjumbo.com%2Ffree-photos%2Fbackgrounds%2F&psig=AOvVaw209W5XLx30Y0C-US1E5TcV&ust=1732687908159000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCPiP28-r-YkDFQAAAAAdAAAAABAT');">
+
+
+        <h1>MILES & MEMORIES</h1>
+        <p>Share your travel experiences and read others' adventures</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#journal">Journal Entries</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container" id="home">
+        <section>
+            <h2>Welcome to the Travel Journal</h2>
+            <p>This is a space for adventurers, explorers, and wanderers to share their experiences from around the world. Whether you're visiting a new city or trekking through a mountain range, we want to hear your stories!</p>
+        </section>
+    </div>
+
+    <div class="container" id="journal">
+        <section>
+            <h2>Share Your Journal Entry</h2>
+            <div class="form-container">
+                <form id="journal-form" enctype="multipart/form-data">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="text" id="destination" placeholder="Destination" required>
+                    <input type="date" id="date" required>
+                    <textarea id="entry" rows="6" placeholder="Write your journal entry here..." required></textarea>
+
+                    <!-- Image Upload -->
+                    <label for="image">Upload an Image (Optional)</label>
+                    <input type="file" id="image" accept="image/*" />
+
+                    <button type="submit">Submit Entry</button>
+                </form>
+            </div>
+        </section>
+
+        <section>
+            <h2>Recent Journal Entries</h2>
+            <div id="journal-entries"></div>
+        </section>
+    </div>
+
+    <div class="container" id="about">
+        <section>
+            <h2>About</h2>
+            <p>Welcome to my Travel Journal My name is Yannis, and I created this journal as a way to share my travel experiences with others. Whether you're a seasoned traveler or just starting out, I hope these stories inspire you to explore the world. Feel free to submit your own entries and join the community!</p>
+        </section>
+    </div>
+
+    <div class="container" id="contact">
+        <section>
+            <h2>Contact</h2>
+            <p>If you have any questions or just want to share your travel stories, reach out to me!</p>
+            <ul>
+                <li>Email: <a href="mailto:yannis.bhadresa24@sakec.ac.in">yannis.bhadresa24@sakec.ac.in</a></li>
+                <li>Instagram: <a href="https://instagram.com/travel_journal" target="_blank">@travel_journal</a></li>
+                <li>Twitter: <a href="https://twitter.com/travel_journal" target="_blank">@travel_journal</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Travel Journal | All rights reserved</p>
+        <p><a href="#home">Back to Top</a></p>
+    </footer>
+
+    <script>
+        // JavaScript to handle journal entry submissions
+        const journalForm = document.getElementById('journal-form');
+        const journalEntriesContainer = document.getElementById('journal-entries');
+
+        journalForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const destination = document.getElementById('destination').value;
+            const date = document.getElementById('date').value;
+            const entry = document.getElementById('entry').value;
+            const image = document.getElementById('image').files[0];
+
+            if (name && destination && date && entry) {
+                let entryHTML = `
+                    <div class="journal-entry">
+                        <h3>${destination} - ${name}</h3>
+                        <p class="date">${new Date(date).toLocaleDateString()}</p>
+                        <p>${entry}</p>
+                `;
+
+                if (image) {
+                    const imageURL = URL.createObjectURL(image); // Create an object URL for the uploaded image
+                    entryHTML += `<img src="${imageURL}" alt="Travel Image">`;
+                }
+
+                entryHTML += `</div>`;
+
+                // Add the new entry at the top of the journal
+                journalEntriesContainer.innerHTML = entryHTML + journalEntriesContainer.innerHTML;
+
+                // Clear the form after submission
+                journalForm.reset();
+            } else {
+                alert('Please fill out all fields!');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
